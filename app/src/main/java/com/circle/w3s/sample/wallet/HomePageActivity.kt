@@ -223,7 +223,14 @@ class HomePageActivity : AppCompatActivity() {
     ) {
         Log.d("HomePageActivity", "Getting Token Balance: $userToken, $userWalletId")
         GlobalScope.launch(Dispatchers.IO) {
-            //Step 8 - PASTE CODE HERE FOR "FETCH TOKEN BALANCES" API
+            val client = OkHttpClient()
+            val request = Request.Builder()
+                .url("https://api.circle.com/v1/w3s/wallets/$userWalletId/balances?pageSize=10")
+                .get()
+                .addHeader("accept", "application/json")
+                .addHeader("X-User-Token", "$userToken")
+                .addHeader("authorization", "Bearer $apiKey")
+                .build()
 
             try {
                 val response = client.newCall(request).execute()
