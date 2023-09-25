@@ -70,7 +70,7 @@ class WalletCreationActivity : AppCompatActivity() {
         val listUserTitle = binding.listUserTitle
         val apiResponseTextView = binding.apiResponseTextView
 
-        //STEP 1 - REPLACE PLACEHOLDER WITH YOUR APP ID
+        //Step 1 - REPLACE PLACEHOLDER WITH YOUR APP ID
         val appId = "YOUR_CIRCLE_WEB3_APP_ID"
 
         // Initially, hide the EditText fields and TextView
